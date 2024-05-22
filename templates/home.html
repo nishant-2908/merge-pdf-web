@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+<title>Download Items</title>
+{% endblock %}
+{% block body %}
+<div class="container flex mb-3">
+    <form action="/merge_pdf" method="post" id="form">
+        <div class="mb-3">
+            <label for="number_of_pdf" class="form-label">
+                <h3 class="choose-title">
+                    Number of PDF's
+                </h3>
+            </label>
+            <input type="number" class="form-control" placeholder="Enter the number of PDF's"
+            name="number_of_pdf" id="number_of_pdf" autofocus autocapitalize="off" autocomplete="off"
+            min="2" max="100" value="2" required>
+        </div>
+        <div id="generated_field">
+        </div>
+        <div class="mb-3">
+            <label for="output_pdf" class="form-label">
+                <h3 class="choose-title">
+                    Output PDF Location
+                </h3>
+            </label>
+            <input type="text" class="form-control" placeholder="Enter the output PDF location"
+            name="output_pdf" id="output_pdf" autofocus autocapitalize="off" autocomplete="off" required minlength="3">
+        </div>
+        <h3 class="choose-title" id="warning" style="color: red"></h3>
+        <button type="button" class="btn btn-primary" id="button">Check</button>
+    </form>
+</div>
+{% endblock %}
+{% block script %}
+<script src="/static/index.js "></script>
+{% endblock %}
